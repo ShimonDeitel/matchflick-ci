@@ -9,7 +9,7 @@
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>signingCertificate</key>
-	<string>iOS Distribution: Joshua Deitel</string>
+	<string>iPhone Distribution: Joshua Deitel (W7Q885Q59C)</string>
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.shimondeitel.matchflickapp</key>

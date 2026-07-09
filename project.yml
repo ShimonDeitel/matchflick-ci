@@ -8,7 +8,7 @@ options:
 settings:
   base:
     MARKETING_VERSION: "1.0"
-    CURRENT_PROJECT_VERSION: "8"
+    CURRENT_PROJECT_VERSION: "9"
     SWIFT_VERSION: "5.0"
     DEVELOPMENT_TEAM: "W7Q885Q59C"
     CODE_SIGN_STYLE: Automatic
@@ -41,7 +41,7 @@ targets:
           GCC_PREPROCESSOR_DEFINITIONS: "DEBUG=1 $(inherited)"
         Release:
           CODE_SIGN_STYLE: Manual
-          CODE_SIGN_IDENTITY: "iOS Distribution: Joshua Deitel"
+          CODE_SIGN_IDENTITY: "iPhone Distribution: Joshua Deitel (W7Q885Q59C)"
           PROVISIONING_PROFILE_SPECIFIER: "Matchflick CI App Store"
   MatchflickTests:
     type: bundle.unit-test
