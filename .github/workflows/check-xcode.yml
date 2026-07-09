@@ -1,8 +1,0 @@
-name: Check Xcode
-on: workflow_dispatch
-jobs:
-  check:
-    runs-on: macos-15
-    steps:
-      - run: ls /Applications | grep -i xcode
-      - run: sudo xcode-select -p
