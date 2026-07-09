@@ -1,0 +1,53 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "MATCHFLICK_STOREKIT_CONFIG",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "minder_pro_group",
+      "localizations" : [],
+      "name" : "Minder Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "2.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "minder_pro_monthly_id",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlocks all 16 moods at once and Watch History. Monthly subscription.",
+              "displayName" : "Minder Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "minder_pro_monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Minder Pro Monthly",
+          "subscriptionGroupID" : "minder_pro_group",
+          "winbackOffers" : []
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

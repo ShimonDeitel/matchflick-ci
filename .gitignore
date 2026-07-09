@@ -1,0 +1,6 @@
+*.xcarchive
+DerivedData/
+build/
+.DS_Store
+*.ipa
+*.dSYM.zip

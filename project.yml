@@ -1,0 +1,88 @@
+name: Matchflick
+options:
+  bundleIdPrefix: com.shimondeitel
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "8"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Matchflick:
+    type: application
+    platform: iOS
+    sources:
+      - path: Matchflick
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.matchflickapp
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Matchflick/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Matchflick/Matchflick.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+      configs:
+        Debug:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: "iPhone Developer: Created via API (SSJA634V44)"
+          PROVISIONING_PROFILE_SPECIFIER: "Matchflick Dev"
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "DEBUG"
+          GCC_PREPROCESSOR_DEFINITIONS: "DEBUG=1 $(inherited)"
+        Release:
+          CODE_SIGN_STYLE: Manual
+          CODE_SIGN_IDENTITY: "iOS Distribution: Joshua Deitel"
+          PROVISIONING_PROFILE_SPECIFIER: "Matchflick CI App Store"
+  MatchflickTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: MatchflickTests
+      - path: Matchflick.storekit
+    dependencies:
+      - target: Matchflick
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.matchflickapp.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  MatchflickUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: MatchflickUITests
+    dependencies:
+      - target: Matchflick
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.matchflickapp.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Matchflick:
+    build:
+      targets:
+        Matchflick: all
+        MatchflickTests: [test]
+        MatchflickUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Matchflick.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Matchflick.storekit
+      targets:
+        - MatchflickTests
+        - MatchflickUITests
+    archive:
+      config: Release
